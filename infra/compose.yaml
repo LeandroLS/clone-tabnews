@@ -1,9 +1,7 @@
 services:
   database:
     image: "postgres:16"
-    environment:
     env_file:
-      - ../.env.development
-    POSTGRES_PASSWORD: "local_password"
+      - '../.env.development'
     ports:
       - "5432:5432"
