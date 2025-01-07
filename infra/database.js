@@ -1,4 +1,4 @@
-import { Client } from "pg";
+import { Client } from 'pg'
 async function query(queryObject) {
   let client
   try {
@@ -20,12 +20,12 @@ async function getNewClient() {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: process.env.NODE_ENV === 'production' ? true : false
+    ssl: process.env.NODE_ENV === 'production' ? true : false,
   })
   await client.connect()
   return client
 }
 export default {
   query,
-  getNewClient
+  getNewClient,
 }
